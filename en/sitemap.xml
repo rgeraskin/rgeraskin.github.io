@@ -3,75 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://roman-geraskin.github.io/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/"
+                href="https://roman-geraskin.github.io/ru/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/"
+                href="https://roman-geraskin.github.io/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/posts/docker-logdriver-doing-wrong/</loc>
+    <loc>https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/posts/docker-logdriver-doing-wrong/"
+                href="https://roman-geraskin.github.io/ru/posts/docker-logdriver-doing-wrong/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/posts/docker-logdriver-doing-wrong/"
+                href="https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/posts/</loc>
+    <loc>https://roman-geraskin.github.io/posts/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/posts/"
+                href="https://roman-geraskin.github.io/ru/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/posts/"
+                href="https://roman-geraskin.github.io/posts/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://roman-geraskin.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/categories/"
+                href="https://roman-geraskin.github.io/ru/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/categories/"
+                href="https://roman-geraskin.github.io/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://roman-geraskin.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/tags/"
+                href="https://roman-geraskin.github.io/ru/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/tags/"
+                href="https://roman-geraskin.github.io/tags/"
                 />
   </url>
   

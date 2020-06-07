@@ -20,7 +20,7 @@ languages:
 params:
   Name: Roman Geraskin
   HeaderUsername: rgeraskin
-  HeaderHostname: blog1
+  HeaderHostname: blog
   About: I'm an experienced Linux administrator and automation engineer with a strong information security background. I have advanced Python / Bash scripting skills and experience with various application, monitoring and alerting services.
   ProfilePicture: /profile.jpg
   GithubID: roman-geraskin

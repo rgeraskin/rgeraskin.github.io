@@ -1,0 +1,36 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: DevOps Blog
+theme: hugo-theme-nix
+
+languages:
+  en:
+    languageName: English
+    contentDir: content/en
+    weight: 1
+    staticDir:
+      - static2
+  ru:
+    languageName: Russian
+    contentDir: content/ru
+    weight: 2
+    staticDir:
+      - static
+
+params:
+  Name: Roman Geraskin
+  HeaderUsername: rgeraskin
+  HeaderHostname: blog
+  About: I'm an experienced Linux administrator and automation engineer with a strong information security background. I have advanced Python / Bash scripting skills and experience with various application, monitoring and alerting services.
+  ProfilePicture: /profile.jpg
+  GithubID: roman-geraskin
+  LinkedInID: roman-geraskin
+  TelegramID: rgeraskin
+  TwitterID: r_geraskin
+
+menu:
+  header:
+  - identifier: posts
+    name: posts
+    url: /posts/
+    weight: 0

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/ru/</loc>
+    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/ru/posts/docker-logdriver-doing-wrong/</loc>
+    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/posts/docker-logdriver-doing-wrong/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/posts/docker-logdriver-doing-wrong/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/ru/posts/</loc>
+    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/ru/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://example.org/ru/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/tags/"
+                />
+  </url>
+  
+</urlset>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Docker Logdriver: doing it wrong &middot; DevOps Blog </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.72.0" />
+
+
+  
+    <link rel="alternate" hreflang="en" href="http://example.org/posts/docker-logdriver-doing-wrong/" title="English">
+  
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="http://example.org/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" id="green-terminal" href='http://example.org/ru/'>
+        rgeraskin@blog ~ $
+      </a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href='http://example.org/ru/'>/home/rgeraskin</a>
+        </li>
+        
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" title="Russian">
+              LANG=ru
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              
+                <li>
+                  <a href="http://example.org/posts/docker-logdriver-doing-wrong/" title="English">
+                    export LANG=en
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+				
+				
+				<li class="dropdown">
+                    
+            		<a href="http://example.org/ru/posts/">~/posts</a>
+            		
+        		</li>
+        		
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="http://example.org/ru/posts/docker-logdriver-doing-wrong/">Docker Logdriver: doing it wrong</a></h1>
+                <span class="post-date">2020-06-07 </span>
+                <div class="post-content">
+                    <h2 id="tldr">TL;DR</h2>
+<blockquote>
+<p>Docker userland-proxy мешает работе logdriver&rsquo;a, ломая логику async-connect. Как следствие, будут потеряны все логи, отправленные logdriver&rsquo;ом до момента готовности аггрегатора логов, например, <em>Fluentd</em>.</p>
+</blockquote>
+<h2 id="никто-не-любит-logging-driverы">Никто не любит logging driver&rsquo;ы</h2>
+<p>Docker Log Driver - итересная штука, созданная, чтобы облегчить сбор логов. Казалось бы, подключил логдрайвер - и забыл. Но не все так просто, и в реальных проектах зачастую не используют logdriver, предпочитая просто парсить логи докера. Почему?</p>
+<ol>
+<li>
+<p>Прежде всего - <em>split logging</em>, который в Docker CE поддерживается только с некоторыми драйверами. В общем, проще считать, что его нет. Вроде бы, и зачем он нужен, при живой системе логгирования-то? Но на практике бывает очень удобно подключиться к ноде и посмотреть последние события через <code>docker logs</code>.</p>
+</li>
+<li>
+<p>Kubernetes лог драйверы не поддерживает. А все либо уже в k8s, либо хотят туда. Nuff said.</p>
+</li>
+<li>
+<p>Работает не очевидно, страшно потерять логи. Читай, <em>&ldquo;попробовал настроить, логи теряются, разбираться не хочется&rdquo;</em>. Парсить json&rsquo;ы надежней.</p>
+</li>
+</ol>
+<p>Если все аргументы выше не заставили передумать, приступим. Настраивать будем log driver для <em>Fluentd</em>.</p>
+<h2 id="настройка-типичного-efk">Настройка типичного EFK</h2>
+<p>Существует масса руководств по настройке docker log driver, да хотя бы прям в доке docker`a. Как выглядит типичный &ldquo;Getting started guide&rdquo; для EFK?</p>
+<p>Простейший <em>fluent.conf</em>:</p>
+<pre><code>&lt;source&gt;
+  @type forward
+  @label @out
+&lt;/source&gt;
+
+&lt;label @out&gt;
+  &lt;match&gt;
+    @type elasticsearch
+    host elasticsearch
+    logstash_format true
+    &lt;buffer&gt;
+      flush_interval 10
+    &lt;/buffer&gt;
+  &lt;/match&gt;
+&lt;/label&gt;
+</code></pre><p>Добавляем во <em>Fluentd</em> elasticsearch плагин:</p>
+<pre><code>FROM fluent/fluentd:v1.10-1
+
+USER root
+
+RUN gem install fluent-plugin-elasticsearch \
+ &amp;&amp; gem sources --clear-all \
+ &amp;&amp; rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
+
+USER fluent
+</code></pre><p><em>docker-compose.yml</em>:</p>
+<pre><code>version: &quot;3.6&quot;
+
+services:
+  fluentd:
+    image: fluentd:efk
+    build: .
+    ports:
+      - 127.0.0.1:24224:24224
+    volumes:
+      - ./fluent.conf:/fluentd/etc/fluent.conf
+    networks:
+      - internal
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.7.0
+    environment:
+      - discovery.type=single-node
+    networks:
+      - internal
+    logging:
+      driver: fluentd
+      options:
+        fluentd-async-connect: &quot;true&quot;
+        fluentd-sub-second-precision: &quot;true&quot;
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:7.7.0
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+    networks:
+      - internal
+      - external
+    logging:
+      driver: fluentd
+      options:
+        fluentd-async-connect: &quot;true&quot;
+        fluentd-sub-second-precision: &quot;true&quot;
+
+networks:
+  internal:
+  external:
+</code></pre><p>Абсолютно обычный сетап EFK. Остается добавить только приложение, базу и т.п.</p>
+<p>Отдельно остановлюсь на опциях:</p>
+<ul>
+<li><code>fluentd-sub-second-precision</code> - логгировать время с субсекундной точностью. Благодаря этому логи в кибане будут отображаться в правильном порядке (с большей вероятностью).</li>
+<li><code>fluentd-async-connect</code> - если не удается подключиться к <em>Fluentd</em>, то не падаем с ошибкой, а продолжаем попытки коннекта, буфферизируя неотправленные логи.</li>
+</ul>
+<h2 id="что-же-не-так">Что же не так?</h2>
+<p>Все просто, с подобным конфигом мы будем терять все логи до момента готовности <em>Fluentd</em>. Причем, момент готовности != моменту старта контейнера.</p>
+<p>Это легко проверить, подняв данный <code>docker-compose.yml</code>: логов старта elasticsearch и kibana в самом elasticsearch не будет.</p>
+<p>Начинаем разбираться. Кажется, что всему виной опция <code>fluentd-async-connect</code>, ведь именно она отвечает за то, чтобы копить логи, пока не станет доступным <em>Fluentd</em>. Для подтверждения данной теории можно запустить <code>tcpdump</code> и восстановить ход событий:</p>
+<p><em>(кибану можно исключить из процесса для ясности)</em></p>
+<ul>
+<li>стартует <em>fluentd</em></li>
+<li>стартует <em>elastic</em></li>
+<li><em>fluentd</em> ждет готовности <em>elastic</em>: порт <code>24224</code> еще не открыт</li>
+<li><em>elastic</em> насыпает логов, логи вроде как отправляются в <code>localhost:24224</code>, эти логи потеряны</li>
+<li><em>fluentd</em> видит <em>elastic</em>, открывает порт, с этого момента логи логгируются, как и ожидалось</li>
+</ul>
+<p>Почему же log driver отправляет логи, хотя порт <code>24224</code> еще не открыт? А точно ли он не открыт? Это легко проверить более высокоуровневыми средствами.</p>
+<p>Пытаемся подключиться к <code>24224</code> до старта compose - ожидаемый отлуп:</p>
+<pre><code>$ telnet localhost 24224
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+$
+</code></pre><p>Пытаемся подключиться к <code>24224</code> сразу после старта compose, т.е. до открытия порта <em>Fluentd</em>:</p>
+<pre><code>$ telnet localhost 24224
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Connection closed by foreign host.
+$
+</code></pre><p><strong>WTF?</strong> Кто-то уже слушает порт и сбрасывает соединение!</p>
+<p>Пытаемся подключиться к <code>24224</code> после того как <em>Fluentd</em> &ldquo;увидел&rdquo; elasticsearch и, соответственно, выставил порт - ожидаемо, подключились:</p>
+<pre><code>$ telnet localhost 24224
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+</code></pre><h2 id="что-делать-и-кто-виноват">Что делать и кто виноват?</h2>
+<p>Путем недолгих размышлений было выяснено, что это <em>docker-proxy</em>. Отключаем:</p>
+<p><em>/etc/docker/daemon.json</em>:</p>
+<pre><code>{
+  &quot;userland-proxy&quot;: false
+}
+</code></pre><p>И все приходит в норму: до старта worker&rsquo;a <em>Fluentd</em> и открытия порта по <code>24224</code> никто не отвечает, а благодаря <code>fluentd-async-connect</code> log driver пытается отправить логи, повторяя попытки согласно настройкам. И после готовности <em>Fluentd</em> логи будут успешно отправлены, без потерь.</p>
+<h3 id="что-за-docker-proxy">Что за docker-proxy?</h3>
+<p>Не вдаваясь в подробности, <em>docker userland-proxy</em> - это то, что используется сейчас чаще всего совместно с <strong>IPv6</strong>, соответственно, в большинстве случаев, может быть безболезненно отключено.</p>
+<h2 id="вывод-от-ipv6-не-уйти">Вывод: от IPv6 не уйти.</h2>
+<p>К сожалению, это не единственная особенность в работе с docker log driver, достаточно взглянуть на багтрекер&hellip; В т.ч. такие нюансы - еще один отличный довод в пользу отказа от logdrivers.</p>
+
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2020 Roman Geraskin -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+        </div>
+    </body>

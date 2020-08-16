@@ -5,7 +5,7 @@ theme: aether
 # disqusShortname: "Your shortname for Disqus - optional"
 
 DefaultContentLanguage: ru
-defaultContentLanguageInSubdir: true
+# defaultContentLanguageInSubdir: true
 
 languages:
   en:

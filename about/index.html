@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Posts &middot; DevOps Blog</title>
+  <title>About me &middot; DevOps Blog</title>
   <meta name="description" content="" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://roman-geraskin.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://roman-geraskin.github.io/favicon-32x32.png">
@@ -38,25 +38,24 @@ window.onclick = function(event) {
   
   
   <link href="https://roman-geraskin.github.io/css/concated.min.css" rel="stylesheet">
-  <link rel="alternate" type="application/rss+xml" href="https://roman-geraskin.github.io/en/posts/index.xml" title="DevOps Blog" />
   
   
 </head>
 
-  <body class="list-body">
+  <body class="single-body">
     <nav class="nav-bar side-padding">
-  <h1 class="nav-header"><a href="https://roman-geraskin.github.io/" class="nav-text">rngeraskin@blog ~/posts $
+  <h1 class="nav-header"><a href="https://roman-geraskin.github.io/" class="nav-text">rngeraskin@blog ~/about $
       </a></h1>
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">LANG=en<span> &#9660;</span></button>
+    <button onclick="myFunction()" class="dropbtn">LANG=ru<span> &#9660;</span></button>
     <div id="myDropdown" class="dropdown-content">
       
-      <a href="https://roman-geraskin.github.io/posts/" title="Russian">export LANG=ru</a>
+      <a href="https://roman-geraskin.github.io/en/about/" title="English">export LANG=en</a>
       
     </div>
   </div>
   <div class="nav-links">
-    <button class="nav-links-btn" onclick="location.href='/en/about'" type="button">cd ~/about</button>
+    <button class="nav-links-btn" onclick="location.href='/ru/'" type="button">cd ~/posts</button>
     </div>
   <div class="hamburger-menu">
     <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu"
@@ -66,34 +65,56 @@ window.onclick = function(event) {
     </button>
     <ul id="menu" class="hamburger-menu-overlay">
       <li><a href="https://roman-geraskin.github.io/" class="hamburger-menu-overlay-link">Home</a></li>
-      <li><a href="https://roman-geraskin.github.io/en/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      <li><a href="https://roman-geraskin.github.io/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/categories/devops/" class="hamburger-menu-overlay-link">devops</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/categories/docker/" class="hamburger-menu-overlay-link">docker</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/categories/logs/" class="hamburger-menu-overlay-link">logs</a></li>
       
       
     </ul>
   </div>
 </nav>
-    <main class="card-container side-gutter">
-      <header class="list-header">
-        <h1 class="list-header-title">Posts</h1>
+    <main class="content side-text-padding">
+      <article class="post ">
+        <header class="post-header">
+          <h1 class="post-title">About me</h1>
+          
+        </header>
         
-      </header>
+        
+        <picture class="small-pic ">
+    
+    
+    
+        
+        
+        <source srcset="https://roman-geraskin.github.io/about/profile_hu2f307a5f23288c798230c92f583cd3bd_187127_200x0_resize_q75_lanczos.jpg">
+        <img src="https://roman-geraskin.github.io/about/profile_hu2f307a5f23288c798230c92f583cd3bd_187127_200x0_resize_q75_lanczos.jpg" class="small-img smartfloat-left" alt="this is me"  style="width: 200px;"/>
+    
+</picture>
+<p>Hello. My name is Roman Geraskin.</p>
+<p>I&rsquo;m an experienced Linux administrator and automation engineer with a strong information security background.</p>
+<p>I have advanced Python / Bash scripting skills and experience with various application, monitoring and alerting services.</p>
+<ul>
+<li><a href="https://github.com/roman-geraskin">Look at my GitHub</a></li>
+<li><a href="https://twitter.com/rgeraskin">Follow me on Twitter</a></li>
+<li><a href="https://www.linkedin.com/in/roman-geraskin/">See my LinkedIn profile</a></li>
+<li><a href="https://t.me/rgeraskin">Contact me via Telegram</a></li>
+</ul>
+
+      </article>
       
-      
+    </main>
+    <nav class="end-nav side-padding">
       
       <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="https://roman-geraskin.github.io/en/posts/docker-logdriver-doing-wrong/" class="card blog-card" rel="bookmark" >
-  
-  <article class="card-body">
-    <h2 class="card-title">My First Post</h2>
-    <p class="card-text">Content is under development</p>
-    <div class="card-subtext muted-text">
-      <p>Posted <time datetime="2020-06-07">Jun 7, 2020</time></p>
-      
-    </div>
-  </article>
+  href="https://roman-geraskin.github.io/" class="card home-card" style="background-image: url( https://roman-geraskin.github.io/img/grey-cloud.jpg )" rel="bookmark" >
+  Home
 </a>
-    </main>
-    
+    </nav>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>

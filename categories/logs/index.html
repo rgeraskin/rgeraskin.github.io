@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Posts &middot; DevOps Blog</title>
+  <title>logs &middot; DevOps Blog</title>
   <meta name="description" content="" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://roman-geraskin.github.io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://roman-geraskin.github.io/favicon-32x32.png">
@@ -38,7 +38,7 @@ window.onclick = function(event) {
   
   
   <link href="https://roman-geraskin.github.io/css/concated.min.css" rel="stylesheet">
-  <link rel="alternate" type="application/rss+xml" href="https://roman-geraskin.github.io/en/posts/index.xml" title="DevOps Blog" />
+  <link rel="alternate" type="application/rss+xml" href="https://roman-geraskin.github.io/categories/logs/index.xml" title="DevOps Blog" />
   
   
 </head>
@@ -48,15 +48,13 @@ window.onclick = function(event) {
   <h1 class="nav-header"><a href="https://roman-geraskin.github.io/" class="nav-text">rngeraskin@blog ~/posts $
       </a></h1>
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">LANG=en<span> &#9660;</span></button>
+    <button onclick="myFunction()" class="dropbtn">LANG=ru<span> &#9660;</span></button>
     <div id="myDropdown" class="dropdown-content">
-      
-      <a href="https://roman-geraskin.github.io/posts/" title="Russian">export LANG=ru</a>
       
     </div>
   </div>
   <div class="nav-links">
-    <button class="nav-links-btn" onclick="location.href='/en/about'" type="button">cd ~/about</button>
+    <button class="nav-links-btn" onclick="location.href='/ru/about'" type="button">cd ~/about</button>
     </div>
   <div class="hamburger-menu">
     <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu"
@@ -66,7 +64,13 @@ window.onclick = function(event) {
     </button>
     <ul id="menu" class="hamburger-menu-overlay">
       <li><a href="https://roman-geraskin.github.io/" class="hamburger-menu-overlay-link">Home</a></li>
-      <li><a href="https://roman-geraskin.github.io/en/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      <li><a href="https://roman-geraskin.github.io/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/categories/devops/" class="hamburger-menu-overlay-link">devops</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/categories/docker/" class="hamburger-menu-overlay-link">docker</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/categories/logs/" class="hamburger-menu-overlay-link">logs</a></li>
       
       
     </ul>
@@ -74,21 +78,21 @@ window.onclick = function(event) {
 </nav>
     <main class="card-container side-gutter">
       <header class="list-header">
-        <h1 class="list-header-title">Posts</h1>
+        <h1 class="list-header-title">logs</h1>
         
       </header>
       
       
       
       <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="https://roman-geraskin.github.io/en/posts/docker-logdriver-doing-wrong/" class="card blog-card" rel="bookmark" >
+  href="https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/" class="card blog-card" rel="bookmark" >
   
   <article class="card-body">
-    <h2 class="card-title">My First Post</h2>
-    <p class="card-text">Content is under development</p>
+    <h2 class="card-title">Docker Logdriver: doing it wrong</h2>
+    <p class="card-text">Docker userland-proxy мешает работе logdriver&#39;a, ломая логику async-connect. Как следствие, будут потеряны все логи, отправленные logdriver&#39;ом до момента готовности аггрегатора логов, например, *Fluentd*.</p>
     <div class="card-subtext muted-text">
       <p>Posted <time datetime="2020-06-07">Jun 7, 2020</time></p>
-      
+      <p>#Devops #Docker #Logs </p>
     </div>
   </article>
 </a>

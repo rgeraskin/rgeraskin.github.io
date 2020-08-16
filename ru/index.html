@@ -1,168 +1,113 @@
 <!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<title> DevOps Blog </title>
+<html lang="ru" dir="ltr">
+  <head>
+	<meta name="generator" content="Hugo 0.74.3" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>DevOps Blog</title>
+  <meta name="description" content="Random thoughts about DevOps and IT" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://roman-geraskin.github.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://roman-geraskin.github.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://roman-geraskin.github.io/favicon-16x16.png">
+  <link rel="manifest" href="https://roman-geraskin.github.io/site.webmanifest">
+  <script>
 
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.72.0" />
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
 
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   
-    <link rel="alternate" hreflang="en" href="https://roman-geraskin.github.io/" title="English">
   
+  
+  
+  <link href="https://roman-geraskin.github.io/css/concated.min.css" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" href="https://roman-geraskin.github.io/ru/index.xml" title="DevOps Blog" />
+  
+  
+</head>
 
-
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://roman-geraskin.github.io/css/nix.css">
-
-
-
-
-
-<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
-
-
-
-
-
-
-
-	</head>
-	<body>
-		<header>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-      <a class="navbar-brand" id="green-terminal" href='https://roman-geraskin.github.io/ru/'>
-        rgeraskin@blog ~ $
-      </a>
-		</div>
-
-		
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href='https://roman-geraskin.github.io/ru/'>/home/rgeraskin</a>
-        </li>
-        
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" title="Russian">
-              LANG=ru
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              
-                <li>
-                  <a href="https://roman-geraskin.github.io/" title="English">
-                    export LANG=en
-                  </a>
-                </li>
-              
-            </ul>
-          </li>
-        
-				
-				
-				<li class="dropdown">
-                    
-            		<a href="https://roman-geraskin.github.io/ru/posts/">~/posts</a>
-            		
-        		</li>
-        		
-
-			</ul>
-		</div>
-	</div>
+  <body class="list-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="https://roman-geraskin.github.io/" class="nav-text">rngeraskin@blog ~/posts $
+      </a></h1>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">LANG=ru<span> &#9660;</span></button>
+    <div id="myDropdown" class="dropdown-content">
+      
+      <a href="https://roman-geraskin.github.io/en/" title="English">export LANG=en</a>
+      
+    </div>
+  </div>
+  <div class="nav-links">
+    <button class="nav-links-btn" onclick="location.href='/ru/about'" type="button">cd ~/about</button>
+    </div>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu"
+      aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="https://roman-geraskin.github.io/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="https://roman-geraskin.github.io/ru/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/ru/categories/devops/" class="hamburger-menu-overlay-link">devops</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/ru/categories/docker/" class="hamburger-menu-overlay-link">docker</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/ru/categories/logs/" class="hamburger-menu-overlay-link">logs</a></li>
+      
+      
+    </ul>
+  </div>
 </nav>
-</header>
+    <main class="card-container side-gutter">
+      <header class="list-header">
+        <h1 class="list-header-title">DevOps Blog</h1>
+        
+      </header>
+      
+      
+      
+      
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="https://roman-geraskin.github.io/ru/posts/docker-logdriver-doing-wrong/" class="card blog-card" rel="bookmark" >
+  
+  <article class="card-body">
+    <h2 class="card-title">Docker Logdriver: doing it wrong</h2>
+    <p class="card-text">Docker userland-proxy мешает работе logdriver&#39;a, ломая логику async-connect. Как следствие, будут потеряны все логи, отправленные logdriver&#39;ом до момента готовности аггрегатора логов, например, *Fluentd*.</p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2020-06-07">Jun 7, 2020</time></p>
+      <p>#Devops #Docker #Logs </p>
+    </div>
+  </article>
+</a>
+    </main>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="https://roman-geraskin.github.io/js/core.min.js"></script>
 
-		<div class="flex-wrapper">
-			<div class="container wrapper">
-				
-				<div class="row">
-					<div class="col-sm-3 col-centered">
-						<img alt="profile-picture" class="img-responsive img-circle user-picture center-block" src="/profile.jpg">
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-xs-12 user-profile text-center">
-						<h1 id="user-name">Roman Geraskin</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 user-social text-center">
-					
-
-
-
-
-<a href="https://twitter.com/r_geraskin" rel="me" title="Twitter"><i class="fab fa-twitter fa-3x" aria-hidden="true"></i></a>
-
-
-
-
-
-
-<a href="https://github.com/roman-geraskin" rel="me" title="GitHub"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>
-
-
-
-
-<a href="https://linkedin.com/in/roman-geraskin" rel="me" title="LinkedIn"><i class="fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
-
-
-
-<a href="https://t.me/rgeraskin" rel="me" title="Telegram"><i class="fab fa-telegram fa-3x" aria-hidden="true"></i></a>
-
-
-
-
-
-
-
-
-
-
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 user-description text-center">
-						<p>I&#39;m an experienced Linux administrator and automation engineer with a strong information security background. I have advanced Python / Bash scripting skills and experience with various application, monitoring and alerting services.</p>
-					</div>
-				</div>
-				
-			</div>
-			<footer class="footer text-center">
-<p>Copyright &copy; 2020 Roman Geraskin -
-<span class="credit">
-	Powered by
-	<a target="_blank" href="https://gohugo.io">Hugo</a>
-	and
-	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
-</span>
-</p>
-</footer>
-
-		</div>
-	</body>
+  </body>
 </html>

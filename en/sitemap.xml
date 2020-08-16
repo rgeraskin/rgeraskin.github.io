@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://roman-geraskin.github.io/</loc>
+    <loc>https://roman-geraskin.github.io/en/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -13,12 +13,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/"
+                href="https://roman-geraskin.github.io/en/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/</loc>
+    <loc>https://roman-geraskin.github.io/en/posts/docker-logdriver-doing-wrong/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -28,12 +28,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/"
+                href="https://roman-geraskin.github.io/en/posts/docker-logdriver-doing-wrong/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/posts/</loc>
+    <loc>https://roman-geraskin.github.io/en/posts/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -43,12 +43,26 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/posts/"
+                href="https://roman-geraskin.github.io/en/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/categories/</loc>
+    <loc>https://roman-geraskin.github.io/en/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://roman-geraskin.github.io/ru/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://roman-geraskin.github.io/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://roman-geraskin.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -57,12 +71,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/categories/"
+                href="https://roman-geraskin.github.io/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/tags/</loc>
+    <loc>https://roman-geraskin.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -71,7 +85,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/tags/"
+                href="https://roman-geraskin.github.io/en/tags/"
                 />
   </url>
   

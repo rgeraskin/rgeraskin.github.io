@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>docker &middot; DevOps Blog</title>
+  <meta name="description" content="" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://roman-geraskin.github.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://roman-geraskin.github.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://roman-geraskin.github.io/favicon-16x16.png">
+  <link rel="manifest" href="https://roman-geraskin.github.io/site.webmanifest">
+  <script>
+
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  
+  
+  
+  
+  <link href="https://roman-geraskin.github.io/css/concated.min.css" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" href="https://roman-geraskin.github.io/ru/categories/docker/index.xml" title="DevOps Blog" />
+  
+  
+</head>
+
+  <body class="list-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="https://roman-geraskin.github.io/" class="nav-text">rngeraskin@blog ~/posts $
+      </a></h1>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">LANG=ru<span> &#9660;</span></button>
+    <div id="myDropdown" class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="nav-links">
+    <button class="nav-links-btn" onclick="location.href='/ru/about'" type="button">cd ~/about</button>
+    </div>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu"
+      aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="https://roman-geraskin.github.io/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="https://roman-geraskin.github.io/ru/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/ru/categories/devops/" class="hamburger-menu-overlay-link">devops</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/ru/categories/docker/" class="hamburger-menu-overlay-link">docker</a></li>
+      
+      <li><a href="https://roman-geraskin.github.io/ru/categories/logs/" class="hamburger-menu-overlay-link">logs</a></li>
+      
+      
+    </ul>
+  </div>
+</nav>
+    <main class="card-container side-gutter">
+      <header class="list-header">
+        <h1 class="list-header-title">docker</h1>
+        
+      </header>
+      
+      
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="https://roman-geraskin.github.io/ru/posts/docker-logdriver-doing-wrong/" class="card blog-card" rel="bookmark" >
+  
+  <article class="card-body">
+    <h2 class="card-title">Docker Logdriver: doing it wrong</h2>
+    <p class="card-text">Docker userland-proxy мешает работе logdriver&#39;a, ломая логику async-connect. Как следствие, будут потеряны все логи, отправленные logdriver&#39;ом до момента готовности аггрегатора логов, например, *Fluentd*.</p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2020-06-07">Jun 7, 2020</time></p>
+      <p>#Devops #Docker #Logs </p>
+    </div>
+  </article>
+</a>
+    </main>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="https://roman-geraskin.github.io/js/core.min.js"></script>
+
+  </body>
+</html>

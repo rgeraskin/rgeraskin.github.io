@@ -2,6 +2,17 @@
 title: "Docker Logdriver: doing it wrong"
 date: 2020-06-07T11:28:10+03:00
 draft: false
+description: >-
+  Docker userland-proxy мешает работе logdriver'a, ломая логику async-connect. Как следствие, будут потеряны все логи, отправленные logdriver'ом до момента готовности аггрегатора логов, например, *Fluentd*.
+categories: ["devops", "docker", "logs"]
+toc: false
+displayInMenu: false
+displayInList: true
+resources:
+- name: featuredImage
+  src: "Filename of the post's featured image, used as the card image and the image at the top of the article"
+  params:
+    description: "Docker Logdriver post image"
 ---
 
 ## TL;DR

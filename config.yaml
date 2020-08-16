@@ -1,36 +1,31 @@
 baseURL: https://roman-geraskin.github.io/
-languageCode: en-us
 title: DevOps Blog
-theme: hugo-theme-nix
+theme: aether
+# googleAnalytics: "Your google analytics tracking ID - optional"
+# disqusShortname: "Your shortname for Disqus - optional"
+
+DefaultContentLanguage: ru
+defaultContentLanguageInSubdir: true
 
 languages:
   en:
     languageName: English
     contentDir: content/en
-    weight: 1
-    staticDir:
-      - static2
+    weight: 2
+    languageCode: en-en
   ru:
     languageName: Russian
     contentDir: content/ru
-    weight: 2
-    staticDir:
-      - static
+    weight: 1
+    languageCode: ru
 
 params:
-  Name: Roman Geraskin
-  HeaderUsername: rgeraskin
-  HeaderHostname: blog
-  About: I'm an experienced Linux administrator and automation engineer with a strong information security background. I have advanced Python / Bash scripting skills and experience with various application, monitoring and alerting services.
-  ProfilePicture: /profile.jpg
-  GithubID: roman-geraskin
-  LinkedInID: roman-geraskin
-  TelegramID: rgeraskin
-  TwitterID: r_geraskin
+  brand: rngeraskin@blog
+  description: Random thoughts about DevOps and IT
+  # homeimg: Path, within the 'assets' folder, of the image used for the home button at the bottom of each post - optional
+  # bgimg: Path, within the 'assets' folder, of the image used for the page background - optional
+  # rssinmenu = whether you would like a RSS feed link to appear in the navigation menu (true, false) - optional
 
-menu:
-  header:
-  - identifier: posts
-    name: posts
-    url: /posts/
-    weight: 0
+markup:
+  highlight:
+    style: igor

@@ -4,7 +4,7 @@ date: 2020-11-23T19:28:10+03:00
 draft: false
 description: >-
   Учимся преобразовывать маинфесты из одной apiVersion в другую средствами куба.
-categories: ["devops", "kubernetes", "k8s"]
+categories: ["devops", "kubernetes", "K8S"]
 toc: false
 displayInMenu: false
 displayInList: true

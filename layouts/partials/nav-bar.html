@@ -1,5 +1,5 @@
 <nav class="nav-bar side-padding">
-  <h1 class="nav-header"><a href="{{ .Site.BaseURL }}" class="nav-text">
+  <h1 class="nav-header"><a href="{{ .Site.BaseURL }}/{{ .Language.Lang }}" class="nav-text">
       {{- if isset $.Site.Params "brand"}}
       {{- if eq $.Title "About me"}}
       {{- $.Site.Params.brand }} ~/about $

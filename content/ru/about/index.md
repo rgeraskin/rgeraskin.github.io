@@ -15,7 +15,7 @@ I'm an experienced Linux administrator and automation engineer with a strong inf
 
 I have advanced Python / Bash scripting skills and experience with various application, monitoring and alerting services.
 
-* [Look at my GitHub](https://github.com/roman-geraskin)
+* [Look at my GitHub](https://github.com/rgeraskin)
 * [Follow me on Twitter](https://twitter.com/r_geraskin)
-* [See my LinkedIn profile](https://www.linkedin.com/in/roman-geraskin/)
+* [See my LinkedIn profile](https://www.linkedin.com/in/rgeraskin/)
 * [Contact me via Telegram](https://t.me/rgeraskin)

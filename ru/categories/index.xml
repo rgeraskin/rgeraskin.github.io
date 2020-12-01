@@ -1,0 +1,49 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - DevOps Blog</title>
+    <link>https://rgeraskin.com/ru/categories/</link>
+    <description>Recent content in Categories on DevOps Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Mon, 23 Nov 2020 19:28:10 +0300</lastBuildDate>
+    
+        <atom:link href="https://rgeraskin.com/ru/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>devops</title>
+      <link>https://rgeraskin.com/ru/categories/devops/</link>
+      <pubDate>Mon, 23 Nov 2020 19:28:10 +0300</pubDate>
+      
+      <guid>https://rgeraskin.com/ru/categories/devops/</guid>
+      <description></description>
+    </item><item>
+      <title>K8S</title>
+      <link>https://rgeraskin.com/ru/categories/k8s/</link>
+      <pubDate>Mon, 23 Nov 2020 19:28:10 +0300</pubDate>
+      
+      <guid>https://rgeraskin.com/ru/categories/k8s/</guid>
+      <description></description>
+    </item><item>
+      <title>kubernetes</title>
+      <link>https://rgeraskin.com/ru/categories/kubernetes/</link>
+      <pubDate>Mon, 23 Nov 2020 19:28:10 +0300</pubDate>
+      
+      <guid>https://rgeraskin.com/ru/categories/kubernetes/</guid>
+      <description></description>
+    </item><item>
+      <title>docker</title>
+      <link>https://rgeraskin.com/ru/categories/docker/</link>
+      <pubDate>Sun, 07 Jun 2020 11:28:10 +0300</pubDate>
+      
+      <guid>https://rgeraskin.com/ru/categories/docker/</guid>
+      <description></description>
+    </item><item>
+      <title>logs</title>
+      <link>https://rgeraskin.com/ru/categories/logs/</link>
+      <pubDate>Sun, 07 Jun 2020 11:28:10 +0300</pubDate>
+      
+      <guid>https://rgeraskin.com/ru/categories/logs/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

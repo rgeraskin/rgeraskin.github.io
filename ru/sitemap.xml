@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://rgeraskin.com/categories/</loc>
+    <loc>https://rgeraskin.com/ru/categories/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -13,17 +13,17 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://rgeraskin.com/categories/"
+                href="https://rgeraskin.com/ru/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/categories/devops/</loc>
+    <loc>https://rgeraskin.com/ru/categories/devops/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/</loc>
+    <loc>https://rgeraskin.com/ru/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -33,22 +33,22 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://rgeraskin.com/"
+                href="https://rgeraskin.com/ru/"
                 />
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/categories/k8s/</loc>
+    <loc>https://rgeraskin.com/ru/categories/k8s/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/categories/kubernetes/</loc>
+    <loc>https://rgeraskin.com/ru/categories/kubernetes/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/posts/</loc>
+    <loc>https://rgeraskin.com/ru/posts/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -58,22 +58,22 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://rgeraskin.com/posts/"
+                href="https://rgeraskin.com/ru/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/posts/get-manifest-from-k8s/</loc>
+    <loc>https://rgeraskin.com/ru/posts/get-manifest-from-k8s/</loc>
     <lastmod>2020-11-23T19:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/categories/docker/</loc>
+    <loc>https://rgeraskin.com/ru/categories/docker/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/posts/docker-logdriver-doing-wrong/</loc>
+    <loc>https://rgeraskin.com/ru/posts/docker-logdriver-doing-wrong/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -83,17 +83,17 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://rgeraskin.com/posts/docker-logdriver-doing-wrong/"
+                href="https://rgeraskin.com/ru/posts/docker-logdriver-doing-wrong/"
                 />
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/categories/logs/</loc>
+    <loc>https://rgeraskin.com/ru/categories/logs/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/about/</loc>
+    <loc>https://rgeraskin.com/ru/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -102,12 +102,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://rgeraskin.com/about/"
+                href="https://rgeraskin.com/ru/about/"
                 />
   </url>
   
   <url>
-    <loc>https://rgeraskin.com/tags/</loc>
+    <loc>https://rgeraskin.com/ru/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -116,7 +116,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://rgeraskin.com/tags/"
+                href="https://rgeraskin.com/ru/tags/"
                 />
   </url>
   

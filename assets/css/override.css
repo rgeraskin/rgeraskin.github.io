@@ -17,6 +17,7 @@ body {
   min-height: 50px;
   line-height: 20px;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .nav-header {
@@ -53,6 +54,26 @@ a.nav-text {
   border: none;
   cursor: pointer;
   padding: 10px 0px;
+}
+
+/* mobile version hack */
+@media screen and (max-width: 710px) {
+  .dropbtn, .nav-links-btn {
+    margin-left: 0;
+  }
+
+  .dropdown {
+    flex: auto;
+  }
+
+  .nav-break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  .dropdown-content {
+    right: -50px !important;
+  }
 }
 
 /* .nav-links a{

@@ -143,7 +143,7 @@ kubectl get deployments.v1.apps ext -o yaml
 
 ## Бонус: kubectl explain
 
-Если сделать `kubectl explain deployment`, то (сюрприз!) мы получим описание из `extensions/v1beta1`. Т.к. `kubectl explain` [работает так](https://github.com/kubernetes/kubernetes/issues/73062) же, как `kubectl get`:
+Если сделать `kubectl explain deployment`, то (сюрприз!) мы получим описание из `extensions/v1beta1`. Т.к. `kubectl explain` [работает так же](https://github.com/kubernetes/kubernetes/issues/73062), как `kubectl get`:
 
 Если нужна конкретная версия, используем флаг:
 

@@ -151,3 +151,7 @@ kubectl get deployments.v1.apps ext -o yaml
 minikube kubectl -- explain deployment.spec --api-version apps/v1
 minikube kubectl -- explain deployment.spec --api-version extensions/v1beta1
 ```
+
+## Обсудим?
+
+{{< tweet 1330238026262458371 >}}

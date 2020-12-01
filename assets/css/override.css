@@ -108,3 +108,10 @@ a.nav-text {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/* twitter block */
+.twitter-tweet {
+  margin: auto;
+  margin-bottom: -2em !important;
+  padding-top: 20px;
+}

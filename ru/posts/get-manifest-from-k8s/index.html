@@ -204,7 +204,7 @@ kubectl get deployments.v1.apps ext -o yaml
 </code></pre></div></li>
 </ol>
 <h2 id="бонус-kubectl-explain">Бонус: kubectl explain</h2>
-<p>Если сделать <code>kubectl explain deployment</code>, то (сюрприз!) мы получим описание из <code>extensions/v1beta1</code>. Т.к. <code>kubectl explain</code> <a href="https://github.com/kubernetes/kubernetes/issues/73062">работает так</a> же, как <code>kubectl get</code>:</p>
+<p>Если сделать <code>kubectl explain deployment</code>, то (сюрприз!) мы получим описание из <code>extensions/v1beta1</code>. Т.к. <code>kubectl explain</code> <a href="https://github.com/kubernetes/kubernetes/issues/73062">работает так же</a>, как <code>kubectl get</code>:</p>
 <p>Если нужна конкретная версия, используем флаг:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube kubectl -- explain deployment.spec --api-version apps/v1
 minikube kubectl -- explain deployment.spec --api-version extensions/v1beta1

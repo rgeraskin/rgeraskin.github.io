@@ -71,9 +71,9 @@ a.nav-text {
     height: 0;
   }
 
-  .dropdown-content {
+  /* .dropdown-content {
     right: -50px !important;
-  }
+  } */
 }
 
 /* .nav-links a{

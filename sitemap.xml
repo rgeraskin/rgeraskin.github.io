@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://roman-geraskin.github.io/ru/sitemap.xml</loc>
-		
-	   	<lastmod>2020-06-07T11:28:10+03:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://roman-geraskin.github.io/en/sitemap.xml</loc>
-		
-	   	<lastmod>2020-06-07T11:28:10+03:00</lastmod>
-		
-	</sitemap>
-	
+  
+  <sitemap>
+    <loc>https://rgeraskin.com/ru/sitemap.xml</loc>
+    
+      <lastmod>2020-06-07T11:28:10+03:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://rgeraskin.com/en/sitemap.xml</loc>
+    
+      <lastmod>2020-06-07T11:28:10+03:00</lastmod>
+    
+  </sitemap>
+  
 </sitemapindex>

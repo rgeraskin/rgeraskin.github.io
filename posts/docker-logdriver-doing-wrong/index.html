@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Docker Logdriver: doing it wrong &middot; DevOps Blog</title>
   <meta name="description" content="Docker userland-proxy мешает работе logdriver&#39;a, ломая логику async-connect. Как следствие, будут потеряны все логи, отправленные logdriver&#39;ом до момента готовности аггрегатора логов, например, *Fluentd*." />
-  <link rel="apple-touch-icon" sizes="180x180" href="https://roman-geraskin.github.io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://roman-geraskin.github.io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://roman-geraskin.github.io/favicon-16x16.png">
-  <link rel="manifest" href="https://roman-geraskin.github.io/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rgeraskin.com/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rgeraskin.com/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rgeraskin.com/favicon-16x16.png">
+  <link rel="manifest" href="https://rgeraskin.com/site.webmanifest">
   <script>
 
 
@@ -37,20 +37,20 @@ window.onclick = function(event) {
   
   
   
-  <link href="https://roman-geraskin.github.io/css/concated.min.css" rel="stylesheet">
+  <link href="https://rgeraskin.com/css/concated.min.css" rel="stylesheet">
   
   
 </head>
 
   <body class="single-body">
     <nav class="nav-bar side-padding">
-  <h1 class="nav-header"><a href="https://roman-geraskin.github.io/" class="nav-text">rngeraskin@blog ~/posts $
+  <h1 class="nav-header"><a href="https://rgeraskin.com/" class="nav-text">rngeraskin@blog ~/posts $
       </a></h1>
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">LANG=ru<span> &#9660;</span></button>
     <div id="myDropdown" class="dropdown-content">
       
-      <a href="https://roman-geraskin.github.io/en/posts/docker-logdriver-doing-wrong/" title="English">export LANG=en</a>
+      <a href="https://rgeraskin.com/en/posts/docker-logdriver-doing-wrong/" title="English">export LANG=en</a>
       
     </div>
   </div>
@@ -64,14 +64,14 @@ window.onclick = function(event) {
       <span></span>
     </button>
     <ul id="menu" class="hamburger-menu-overlay">
-      <li><a href="https://roman-geraskin.github.io/" class="hamburger-menu-overlay-link">Home</a></li>
-      <li><a href="https://roman-geraskin.github.io/about/" class="hamburger-menu-overlay-link">About me</a></li>
+      <li><a href="https://rgeraskin.com/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="https://rgeraskin.com/about/" class="hamburger-menu-overlay-link">About me</a></li>
       
-      <li><a href="https://roman-geraskin.github.io/categories/devops/" class="hamburger-menu-overlay-link">devops</a></li>
+      <li><a href="https://rgeraskin.com/categories/devops/" class="hamburger-menu-overlay-link">devops</a></li>
       
-      <li><a href="https://roman-geraskin.github.io/categories/docker/" class="hamburger-menu-overlay-link">docker</a></li>
+      <li><a href="https://rgeraskin.com/categories/docker/" class="hamburger-menu-overlay-link">docker</a></li>
       
-      <li><a href="https://roman-geraskin.github.io/categories/logs/" class="hamburger-menu-overlay-link">logs</a></li>
+      <li><a href="https://rgeraskin.com/categories/logs/" class="hamburger-menu-overlay-link">logs</a></li>
       
       
     </ul>
@@ -132,49 +132,49 @@ window.onclick = function(event) {
 
 <span style="color:#00f">USER</span><span style="color:#009c00"> fluent</span>
 </code></pre></div><p><em>docker-compose.yml</em>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#00f">version</span>: <span style="color:#009c00">&#34;3.6&#34;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#009c00">&#34;3.6&#34;</span>
 
-<span style="color:#00f">services</span>:
-  <span style="color:#00f">fluentd</span>:
-    <span style="color:#00f">image</span>: fluentd:efk
-    <span style="color:#00f">build</span>: .
-    <span style="color:#00f">ports</span>:
+services:
+  fluentd:
+    image: fluentd:efk
+    build: .
+    ports:
       - 127.0.0.1:24224:24224
-    <span style="color:#00f">volumes</span>:
+    volumes:
       - ./fluent.conf:/fluentd/etc/fluent.conf
-    <span style="color:#00f">networks</span>:
+    networks:
       - internal
 
-  <span style="color:#00f">elasticsearch</span>:
-    <span style="color:#00f">image</span>: docker.elastic.co/elasticsearch/elasticsearch-oss:7.7.0
-    <span style="color:#00f">environment</span>:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.7.0
+    environment:
       - discovery.type=single-node
-    <span style="color:#00f">networks</span>:
+    networks:
       - internal
-    <span style="color:#00f">logging</span>:
-      <span style="color:#00f">driver</span>: fluentd
-      <span style="color:#00f">options</span>:
-        <span style="color:#00f">fluentd-async-connect</span>: <span style="color:#009c00">&#34;true&#34;</span>
-        <span style="color:#00f">fluentd-sub-second-precision</span>: <span style="color:#009c00">&#34;true&#34;</span>
+    logging:
+      driver: fluentd
+      options:
+        fluentd-async-connect: <span style="color:#009c00">&#34;true&#34;</span>
+        fluentd-sub-second-precision: <span style="color:#009c00">&#34;true&#34;</span>
 
-  <span style="color:#00f">kibana</span>:
-    <span style="color:#00f">image</span>: docker.elastic.co/kibana/kibana-oss:7.7.0
-    <span style="color:#00f">ports</span>:
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:7.7.0
+    ports:
       - 5601:5601
-    <span style="color:#00f">depends_on</span>:
+    depends_on:
       - elasticsearch
-    <span style="color:#00f">networks</span>:
+    networks:
       - internal
       - external
-    <span style="color:#00f">logging</span>:
-      <span style="color:#00f">driver</span>: fluentd
-      <span style="color:#00f">options</span>:
-        <span style="color:#00f">fluentd-async-connect</span>: <span style="color:#009c00">&#34;true&#34;</span>
-        <span style="color:#00f">fluentd-sub-second-precision</span>: <span style="color:#009c00">&#34;true&#34;</span>
+    logging:
+      driver: fluentd
+      options:
+        fluentd-async-connect: <span style="color:#009c00">&#34;true&#34;</span>
+        fluentd-sub-second-precision: <span style="color:#009c00">&#34;true&#34;</span>
 
-<span style="color:#00f">networks</span>:
-  <span style="color:#00f">internal</span>:
-  <span style="color:#00f">external</span>:
+networks:
+  internal:
+  external:
 </code></pre></div><p>Абсолютно обычный сетап EFK. Остается добавить только приложение, базу и т.п.</p>
 <p>Отдельно остановлюсь на опциях:</p>
 <ul>
@@ -230,7 +230,7 @@ Escape character is <span style="color:#009c00">&#39;^]&#39;</span>.
     <nav class="end-nav side-padding">
       
       <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
-  href="https://roman-geraskin.github.io/" class="card home-card" style="background-image: url( https://roman-geraskin.github.io/img/grey-cloud.jpg )" rel="bookmark" >
+  href="https://rgeraskin.com/" class="card home-card" style="background-image: url( https://rgeraskin.com/img/grey-cloud.jpg )" rel="bookmark" >
   Home
 </a>
     </nav>
@@ -238,7 +238,7 @@ Escape character is <span style="color:#009c00">&#39;^]&#39;</span>.
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
   
-  <script src="https://roman-geraskin.github.io/js/core.min.js"></script>
+  <script src="https://rgeraskin.com/js/core.min.js"></script>
 
   </body>
 </html>

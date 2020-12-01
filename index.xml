@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps Blog</title>
-    <link>https://roman-geraskin.github.io/</link>
+    <link>https://rgeraskin.com/</link>
     <description>Recent content on DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     <lastBuildDate>Sun, 07 Jun 2020 11:28:10 +0300</lastBuildDate>
     
-        <atom:link href="https://roman-geraskin.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://rgeraskin.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Posts</title>
-      <link>https://roman-geraskin.github.io/posts/</link>
+      <link>https://rgeraskin.com/posts/</link>
       <pubDate>Sun, 07 Jun 2020 11:28:10 +0300</pubDate>
       
-      <guid>https://roman-geraskin.github.io/posts/</guid>
+      <guid>https://rgeraskin.com/posts/</guid>
       <description></description>
     </item>
   </channel>

@@ -3,105 +3,105 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://roman-geraskin.github.io/categories/</loc>
+    <loc>https://rgeraskin.com/categories/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/en/categories/"
+                href="https://rgeraskin.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://roman-geraskin.github.io/categories/"
+                href="https://rgeraskin.com/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/categories/devops/</loc>
+    <loc>https://rgeraskin.com/categories/devops/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/</loc>
-    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://roman-geraskin.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://roman-geraskin.github.io/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://roman-geraskin.github.io/categories/docker/</loc>
-    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/</loc>
+    <loc>https://rgeraskin.com/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/en/posts/docker-logdriver-doing-wrong/"
+                href="https://rgeraskin.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://roman-geraskin.github.io/posts/docker-logdriver-doing-wrong/"
+                href="https://rgeraskin.com/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/categories/logs/</loc>
+    <loc>https://rgeraskin.com/categories/docker/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/posts/</loc>
+    <loc>https://rgeraskin.com/posts/docker-logdriver-doing-wrong/</loc>
     <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/en/posts/"
+                href="https://rgeraskin.com/en/posts/docker-logdriver-doing-wrong/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://roman-geraskin.github.io/posts/"
+                href="https://rgeraskin.com/posts/docker-logdriver-doing-wrong/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/about/</loc>
+    <loc>https://rgeraskin.com/categories/logs/</loc>
+    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rgeraskin.com/posts/</loc>
+    <lastmod>2020-06-07T11:28:10+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/en/about/"
+                href="https://rgeraskin.com/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://roman-geraskin.github.io/about/"
+                href="https://rgeraskin.com/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://roman-geraskin.github.io/tags/</loc>
+    <loc>https://rgeraskin.com/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://roman-geraskin.github.io/en/tags/"
+                href="https://rgeraskin.com/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://roman-geraskin.github.io/tags/"
+                href="https://rgeraskin.com/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://rgeraskin.com/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rgeraskin.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://rgeraskin.com/tags/"
                 />
   </url>
   

@@ -1,34 +1,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories - DevOps Blog</title>
-    <link>https://roman-geraskin.github.io/categories/</link>
+    <link>https://rgeraskin.com/categories/</link>
     <description>Recent content in Categories on DevOps Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     <lastBuildDate>Sun, 07 Jun 2020 11:28:10 +0300</lastBuildDate>
     
-        <atom:link href="https://roman-geraskin.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://rgeraskin.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>devops</title>
-      <link>https://roman-geraskin.github.io/categories/devops/</link>
+      <link>https://rgeraskin.com/categories/devops/</link>
       <pubDate>Sun, 07 Jun 2020 11:28:10 +0300</pubDate>
       
-      <guid>https://roman-geraskin.github.io/categories/devops/</guid>
+      <guid>https://rgeraskin.com/categories/devops/</guid>
       <description></description>
     </item><item>
       <title>docker</title>
-      <link>https://roman-geraskin.github.io/categories/docker/</link>
+      <link>https://rgeraskin.com/categories/docker/</link>
       <pubDate>Sun, 07 Jun 2020 11:28:10 +0300</pubDate>
       
-      <guid>https://roman-geraskin.github.io/categories/docker/</guid>
+      <guid>https://rgeraskin.com/categories/docker/</guid>
       <description></description>
     </item><item>
       <title>logs</title>
-      <link>https://roman-geraskin.github.io/categories/logs/</link>
+      <link>https://rgeraskin.com/categories/logs/</link>
       <pubDate>Sun, 07 Jun 2020 11:28:10 +0300</pubDate>
       
-      <guid>https://roman-geraskin.github.io/categories/logs/</guid>
+      <guid>https://rgeraskin.com/categories/logs/</guid>
       <description></description>
     </item>
   </channel>
